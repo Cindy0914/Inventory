@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UIType = InventoryProject.Util.Define.UIType;
 
-public class UIBase : MonoBehaviour
+namespace InventoryProject.UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class UIBase : MonoBehaviour
     {
-        
-    }
+        public UIType UIType;
+        public abstract void Init(params object[] param);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Show()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
