@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5d5a6065146934a879a18bf0ec9ad6, type: 3}
   m_Name: Mage
   m_EditorClassIdentifier: 
-  className: "\uBA54\uC774\uC9C0"
-  maxHp: 80
-  atk: 3
-  magAtk: 10
-  def: 5
-  desc: "\uCF54\uB529\uC744 \uBABB\uD574\uB3C4 \uC88B\uC544\uD560 \uC218\uB294 \uC788\uC790\uB098"
+  ClassName: "\uBA54\uC774\uC9C0"
+  MaxExp: 1000
+  Desc: "\uBA54\uC774\uC9C0\uB791 \uC704\uC790\uB4DC\uB294 \uBB50\uAC00 \uB2E4\uB978\uAC78\uAE4C"
+  BaseStats:
+    MaxHp: 90
+    Atk: 5
+    MagAtk: 20
+    Def: 10

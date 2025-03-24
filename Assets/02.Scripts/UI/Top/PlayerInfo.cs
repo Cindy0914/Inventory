@@ -1,41 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+using InventoryProject.Character;
 using InventoryProject.Data;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace InventoryProject.UI
 {
     public class PlayerInfo : UIBase
     {
-        [Header("Character")]
         public TextMeshProUGUI CharacterName;
-        public TextMeshProUGUI Level;
-        public TextMeshProUGUI CurrentExp;
-        
-        [Header("ClassData")]
         public TextMeshProUGUI ClassName;
-        public TextMeshProUGUI ExpText;
+        public TextMeshProUGUI Level;
+        public TextMeshProUGUI ExpProgress;
+        public Image ExpFillImage; 
         public TextMeshProUGUI Description;
 
+        private float maxExp;
+        
         public override void Init(params object[] param)
         {
-            CharacterName.text = param[0].ToString();
-            Level.text = param[1].ToString();
-            CurrentExp.text = param[2].ToString();
-
-            var classData = param[3] as ClassData;
-            if (classData == null)
-            {
-                Debug.LogError("ClassData is null");
-                return;
-            }
+            var player = param[0] as Player;
+            var classData = player.PlayerClass;
             
-            ClassName.text = classData.className;
-            ExpText.text = $"{CurrentExp}/{classData.maxExp}";
-            Description.text = classData.desc;
+            CharacterName.text = player.PlayerName;
+            ClassName.text = classData.ClassName;
+            Description.text = classData.Desc;
+            maxExp = classData.MaxExp;
+            
+            SetLevel(player.Level);
+            SetExp(player.CurrentExp);
         }
         
-        // TODO: Exp 등 Set함수를 만들 애들은 Init에서 안해도 되지 않을까?
+        public void SetLevel(int level)
+        {
+            Level.text = $"Lv.{level}";
+        }
+        
+        public void SetExp(float exp)
+        {
+            ExpProgress.text = $"{exp}/{maxExp}";
+            ExpFillImage.fillAmount = exp / maxExp;
+        }
     }
 }
