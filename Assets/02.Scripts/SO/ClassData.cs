@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace InventoryProject.Data
@@ -9,15 +10,6 @@ namespace InventoryProject.Data
         public string ClassName;
         public float MaxExp;
         public string Desc;
-        public Stats BaseStats;
-    }
-    
-    [Serializable]
-    public class Stats
-    {
-        public float MaxHp;
-        public float Atk;
-        public float MagAtk;
-        public float Def;
+        public List<StatEntry> Stats;
     }
 }

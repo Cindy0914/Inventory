@@ -1,8 +1,10 @@
 using InventoryProject.Character;
 using InventoryProject.Data;
 using InventoryProject.Managers;
+using InventoryProject.Util;
 using TMPro;
 using UnityEngine.UI;
+using StatType = InventoryProject.Util.Define.StatType;
 
 namespace InventoryProject.UI
 {
@@ -19,18 +21,18 @@ namespace InventoryProject.UI
         public override void Init(params object[] param)
         {
             var player = param[0] as Player;
-            var classData = player.PlayerClass;
+            var statHandler = player.StatHandler;
 
-            UpdateStatus(classData.BaseStats, player.EnhancedStats);
+            UpdateStatus(statHandler);
             ReturnBtn.onClick.AddListener(() => UIManager.Instance.ShowUI<MainButtons>());
         }
         
-        public void UpdateStatus(Stats baseStats, Stats enhancedStats)
+        public void UpdateStatus(StatHandler statHandler)
         {
-            HpValue.text = $"{baseStats.MaxHp} {GetEnhancedStat(enhancedStats.MaxHp)}";
-            AtkValue.text = $"{baseStats.Atk} {GetEnhancedStat(enhancedStats.Atk)}";
-            MagAtkValue.text = $"{baseStats.MagAtk} {GetEnhancedStat(enhancedStats.MagAtk)}";
-            DefValue.text = $"{baseStats.Def} {GetEnhancedStat(enhancedStats.Def)}";
+            HpValue.text = $"{statHandler.GetBaseStat(StatType.MaxHp)} {GetEnhancedStat(statHandler.GetEnhancedStat(StatType.MaxHp))}";
+            AtkValue.text = $"{statHandler.GetBaseStat(StatType.Atk)} {GetEnhancedStat(statHandler.GetEnhancedStat(StatType.Atk))}";
+            MagAtkValue.text = $"{statHandler.GetBaseStat(StatType.MagAtk)} {GetEnhancedStat(statHandler.GetEnhancedStat(StatType.MagAtk))}";
+            DefValue.text = $"{statHandler.GetBaseStat(StatType.Def)} {GetEnhancedStat(statHandler.GetEnhancedStat(StatType.Def))}";
         }
 
         private string GetEnhancedStat(float value)

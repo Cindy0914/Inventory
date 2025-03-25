@@ -22,18 +22,9 @@ namespace InventoryProject.Util
         public enum StatType
         {
             Atk,
-            Hp,
+            MaxHp,
             MagAtk,
             Def,
-        }
-
-        public enum EquipType
-        {
-            Weapon,
-            Head,
-            Chest,
-            Shoes,
-            Accessory,
         }
 
         public enum ItemIconMaterial

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6426068541429891925}
   - component: {fileID: 4239698611418359258}
   - component: {fileID: 3355087383080793053}
+  - component: {fileID: 5784352628241182441}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -153,8 +154,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Moncat
-  playerClass: {fileID: 11400000, guid: 74ba81ee3c0a2bb47920f6a788dc57ec, type: 2}
+  statHandler: {fileID: 5784352628241182441}
   inventorySize: 36
+--- !u!114 &5784352628241182441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038017511770324939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd80cae8536b5347b46c9cff201f663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  classData: {fileID: 11400000, guid: 74ba81ee3c0a2bb47920f6a788dc57ec, type: 2}
 --- !u!1001 &5805113852821621748
 PrefabInstance:
   m_ObjectHideFlags: 0

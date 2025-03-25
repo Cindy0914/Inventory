@@ -15,8 +15,12 @@ MonoBehaviour:
   ClassName: "\uBA54\uC774\uC9C0"
   MaxExp: 1000
   Desc: "\uBA54\uC774\uC9C0\uB791 \uC704\uC790\uB4DC\uB294 \uBB50\uAC00 \uB2E4\uB978\uAC78\uAE4C"
-  BaseStats:
-    MaxHp: 90
-    Atk: 5
-    MagAtk: 20
-    Def: 10
+  Stats:
+  - statType: 0
+    baseValue: 5
+  - statType: 1
+    baseValue: 100
+  - statType: 2
+    baseValue: 20
+  - statType: 3
+    baseValue: 5

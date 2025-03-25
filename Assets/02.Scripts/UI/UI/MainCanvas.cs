@@ -34,7 +34,6 @@ namespace InventoryProject.UI
             UIManager.Instance.InitUI<MainButtons>();
             UIManager.Instance.InitUI<Status>(player);
             UIManager.Instance.InitUI<Inventory>(player);
-
             UIManager.Instance.ShowUI<MainButtons>();
         }
     }

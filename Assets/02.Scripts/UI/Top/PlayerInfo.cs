@@ -20,7 +20,7 @@ namespace InventoryProject.UI
         public override void Init(params object[] param)
         {
             var player = param[0] as Player;
-            var classData = player.PlayerClass;
+            var classData = player.StatHandler.ClassData;
             
             CharacterName.text = player.PlayerName;
             ClassName.text = classData.ClassName;

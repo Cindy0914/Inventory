@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 2003
   ItemName: "\uBCA8\uD2B8"
-  EquipType: 0
   IconSprite: {fileID: 21300000, guid: 6858a15e5082cf34b9ee3167e90403d3, type: 3}
   EnhanceDatas:
-  - StatType: 1
-    Value: 30
+  - statType: 1
+    baseValue: 30
