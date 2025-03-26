@@ -10,11 +10,12 @@ namespace InventoryProject.Character
     public class StatHandler : MonoBehaviour
     {
         [SerializeField] private ClassData classData;
-        private Dictionary<StatType, float> currentStats = new();
-        private Dictionary<StatType, float> enhancedStats = new();
+        private Dictionary<StatType, float> currentStats = new();  // 기본 스탯
+        private Dictionary<StatType, float> enhancedStats = new(); // 장비 등으로 강화된 스탯
 
         public ClassData ClassData => classData;
         
+        // 클래스 데이터에 따라 스탯 초기화
         public void Init()
         {
             foreach (var stat in classData.Stats)

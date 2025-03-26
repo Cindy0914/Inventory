@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace InventoryProject.UI
 {
+    // 플레이어 정보 UI
     public class PlayerInfo : UIBase
     {
         public TextMeshProUGUI CharacterName;

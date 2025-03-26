@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace InventoryProject.UI
 {
+    // 해당 씬에서 필요한 UI들을 초기화
     public class MainCanvas : MonoBehaviour
     {
         [SerializeField] private List<Transform> parents;
